@@ -1,6 +1,6 @@
-package edu.cs505.finalproject.group4.weather;
+package edu.cs505.finalproject.group4.patterns.factory.weatherfactory;
 
-import edu.cs505.finalproject.group4.weather.*;
+import edu.cs505.finalproject.group4.patterns.factory.weatherfactory.WeatherService;
 
 /**
  * The WeatherServiceCreatorFactory implements WeatherServiceFactory. It is a

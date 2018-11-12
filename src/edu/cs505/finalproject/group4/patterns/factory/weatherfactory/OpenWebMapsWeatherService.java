@@ -1,4 +1,4 @@
-package edu.cs505.finalproject.group4.weather;
+package edu.cs505.finalproject.group4.patterns.factory.weatherfactory;
 
 
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.net.URLEncoder;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import edu.cs505.finalproject.group4.myconnection.LazyHTTPConnectionRegistry;
+import edu.cs505.finalproject.group4.patterns.singleton.httpconnectionsingleton.LazyHTTPConnectionRegistry;
 
 /** 
  * The OpenWebMapsWeatherService is a concrete product class and implements

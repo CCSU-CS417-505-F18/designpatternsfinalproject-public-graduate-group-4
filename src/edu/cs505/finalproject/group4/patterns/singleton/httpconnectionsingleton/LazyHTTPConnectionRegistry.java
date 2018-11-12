@@ -1,4 +1,4 @@
-package edu.cs505.finalproject.group4.myconnection;
+package edu.cs505.finalproject.group4.patterns.singleton.httpconnectionsingleton;
 
 import java.io.BufferedReader;
 import java.io.IOException;

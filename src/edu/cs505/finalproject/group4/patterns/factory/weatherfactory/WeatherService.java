@@ -1,4 +1,4 @@
-package edu.cs505.finalproject.group4.weather;
+package edu.cs505.finalproject.group4.patterns.factory.weatherfactory;
 
 import java.io.IOException;
 
