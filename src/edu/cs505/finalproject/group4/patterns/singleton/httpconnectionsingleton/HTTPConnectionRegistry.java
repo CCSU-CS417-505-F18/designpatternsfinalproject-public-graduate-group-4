@@ -1,43 +1,100 @@
 package edu.cs505.finalproject.group4.patterns.singleton.httpconnectionsingleton;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Properties;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.Inflater;
 import java.util.zip.InflaterInputStream;
 
 /**
- * The LazyHTTPConnectionRegistry class is a Singleton Class which allows to 
+ * The HTTPConnectionRegistry class is a Singleton Class which allows to 
  * create one instance of the class. Using inner class type of Singleton class, 
  * lazy invocation is done. This class will have the httpMakeGETRequest method to
  * get the response from API after checking the errors/failures.
- * LazyHTTPConnectionRegistry is the private constructor of Singleton class.
+ * HTTPConnectionRegistry is the private constructor of Singleton class.
  * 
  * @version 1.0
  */
-public class LazyHTTPConnectionRegistry 
+public class HTTPConnectionRegistry 
 {
-	private static LazyHTTPConnectionRegistry instance = new LazyHTTPConnectionRegistry();
+	Properties connectionProperties;
+	private static HTTPConnectionRegistry instance = new HTTPConnectionRegistry();
 	
-	private LazyHTTPConnectionRegistry() 
+	private HTTPConnectionRegistry() 
 	{
 		System.out.println("Creating Connection Registry singleton");
+		connectionProperties = new Properties();
+		InputStream input = null;
+		Properties prop = new Properties();
+		OutputStream output = null;
+
+		try {
+
+			output = new FileOutputStream("config.properties");
+
+			/*set the properties value 
+			 */
+			prop.setProperty("database", "localhost");
+			prop.setProperty("dbuser", "mkyong");
+			prop.setProperty("dbpassword", "password");
+
+			/*save properties to project root folder
+			*/
+			prop.store(output, null);
+			
+			output.close();
+
+			
+			
+			input = new FileInputStream("appconfig.properties");
+
+			/*load a properties file
+			 */
+			connectionProperties.load(input);
+			System.out.println(connectionProperties);
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		} finally {
+			if (input != null) {
+				try {
+					input.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 	}
-		
+	
+	/*
+	 * getter method that Returns the Connection properties to form the URL 
+	 */
+	public Properties getConnectionProperties(){
+		return connectionProperties;
+	}
+
 	/**
-	 * LazyHTTPConnectionRegistry is the private constructor of Singleton class 
+	 * HTTPConnectionRegistry is the private constructor of Singleton class 
 	 * which has getInstance() method.
 	 * 
 	 * @return Instance the object of the Singleton class.
 	 */
 
-	public static LazyHTTPConnectionRegistry getInstance() 
+	public static HTTPConnectionRegistry getInstance() 
 	{
 		if(instance == null)
-			instance = new LazyHTTPConnectionRegistry();
+		{
+			instance = new HTTPConnectionRegistry();
+
+		}
 		return instance;
 	}
 	
@@ -48,27 +105,26 @@ public class LazyHTTPConnectionRegistry
 	 * using the URL as endpoint
 	 * @return response API response after validation of return for HTTP. Return code 200
 	 * @return null if the connection is failed, we get the Error and Bad Response.
+	 * @throws IOException 
 	 */
 	
-	public String httpMakeGETRequest(String requestAddress) 
+	public String httpMakeGETRequest(String weatherProviderURL) throws IOException 
 	{
-		URL request;
 		HttpURLConnection connection = null;
+		URL request;
 		BufferedReader reader = null;
 		String lines = null;
 		String response = null;
+		request = new URL(weatherProviderURL);
+		connection = (HttpURLConnection) request.openConnection();
+		connection.setRequestMethod("GET");
+		connection.setUseCaches(false);
+		connection.setDoInput(true);
+		connection.setDoOutput(false);
+		connection.setRequestProperty("Accept-Encoding", "gzip, deflate");
 
 		try
 		{
-			request = new URL(requestAddress);
-
-			connection = (HttpURLConnection) request.openConnection();
-
-			connection.setRequestMethod("GET");
-			connection.setUseCaches(false);
-			connection.setDoInput(true);
-			connection.setDoOutput(false);
-			connection.setRequestProperty("Accept-Encoding", "gzip, deflate");
 			connection.connect();
 
 			if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) 
