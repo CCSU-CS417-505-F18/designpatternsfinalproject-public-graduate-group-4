@@ -17,16 +17,20 @@ import java.util.zip.InflaterInputStream;
 
 /**
  * The HTTPConnectionRegistry class is a Singleton Class which allows to 
- * create one instance of the class. Using inner class type of Singleton class, 
- * lazy invocation is done. This class will have the httpMakeGETRequest method to
+ * create one instance of the class. Using Singleton class, invocation
+ * is done. This class will have the httpMakeGETRequest method to
  * get the response from API after checking the errors/failures.
  * HTTPConnectionRegistry is the private constructor of Singleton class.
+ * connectionProperties is an instance variable which will give the 
+ * properties to form the URL. The properties are saved to the root
+ * folder and then gets loaded. 
  * 
- * @version 1.0
+ * @version 2.0
  */
+
 public class HTTPConnectionRegistry 
 {
-	Properties connectionProperties;
+	private Properties connectionProperties;
 	private static HTTPConnectionRegistry instance = new HTTPConnectionRegistry();
 	
 	private HTTPConnectionRegistry() 
@@ -75,8 +79,10 @@ public class HTTPConnectionRegistry
 	}
 	
 	/*
-	 * getter method that Returns the Connection properties to form the URL 
+	 * The getConnectionProperties() method is a getter method that returns 
+	 * the connection properties to form the URL 
 	 */
+
 	public Properties getConnectionProperties(){
 		return connectionProperties;
 	}
@@ -105,7 +111,7 @@ public class HTTPConnectionRegistry
 	 * using the URL as endpoint
 	 * @return response API response after validation of return for HTTP. Return code 200
 	 * @return null if the connection is failed, we get the Error and Bad Response.
-	 * @throws IOException 
+	 * @throws IOException if error occurs when interrupted by I/O operations.
 	 */
 	
 	public String httpMakeGETRequest(String weatherProviderURL) throws IOException 
