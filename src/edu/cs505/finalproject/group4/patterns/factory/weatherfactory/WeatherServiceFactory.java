@@ -1,7 +1,7 @@
 package edu.cs505.finalproject.group4.patterns.factory.weatherfactory;
 
 
-**
+/**
  * The WeatherServiceFactory is an abstract Factory interface which defines
  * the Factory method and creates WeatherService object.
  *
