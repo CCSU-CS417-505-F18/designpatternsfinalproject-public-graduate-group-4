@@ -1,5 +1,7 @@
 package edu.cs505.finalproject.group4.patterns.iteration.weatheriterator;
 
+import java.util.Iterator;
+
 
 /**
  * The Iterator Design Pattern is implemented as an Enum. The enum stores the list 
@@ -28,7 +30,7 @@ public enum WeatherPrinterStyles {
 	 * created for the WeatherPrinterStyles enum.
 	 */
 	
-	public static WeatherStyleIteratorInterface<WeatherPrinterStyles> getIterator() {
+	public static Iterator<WeatherPrinterStyles> getIterator() {
 		return new WeatherStyleIterator();
 	}
 
@@ -42,7 +44,7 @@ public enum WeatherPrinterStyles {
 	 * value that is being iterated.
 	 */
 	
-	private static class WeatherStyleIterator implements WeatherStyleIteratorInterface<WeatherPrinterStyles> {
+	private static class WeatherStyleIterator implements Iterator<WeatherPrinterStyles> {
 		
 		private int currentPos;
 
