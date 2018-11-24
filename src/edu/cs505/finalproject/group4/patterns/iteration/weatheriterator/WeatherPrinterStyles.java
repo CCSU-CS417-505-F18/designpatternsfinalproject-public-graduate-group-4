@@ -11,7 +11,7 @@ import java.util.Iterator;
  * is necessary as the Iterator implementation only works on the enum value of the 
  * WeatherPrinterStyles.
  * 
- * @version 1.0
+ * @version 2.0
  */
 
 public enum WeatherPrinterStyles {

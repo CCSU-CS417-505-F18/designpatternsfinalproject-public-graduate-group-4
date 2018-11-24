@@ -8,7 +8,7 @@ import edu.cs505.finalproject.group4.patterns.factory.weatherfactory.WeatherServ
  * instance of the concrete Weather Service Provider class. It provides the
  * implementation of the getWeatherService() method.
  *
- * @version 1.0
+ * @version 2.0
  */
 public class WeatherServiceCreatorFactory implements WeatherServiceFactory
 {
@@ -20,8 +20,10 @@ public class WeatherServiceCreatorFactory implements WeatherServiceFactory
 	 * @param sWeatherServiceType
 	 * @return WeatherServiceType the Weather Service Handler concrete Class
 	 * @return null nothing if the Weather Service type is not equal to OWN.
-	 * @throws InvalidWeatherProviderException
+	 * @throws InvalidWeatherProviderException if the user tries to access the
+         * data from invalid weather API.
 	 */
+
 	@Override
 	public WeatherService getWeatherService(
 			String sWeatherServiceType) throws InvalidWeatherProviderException

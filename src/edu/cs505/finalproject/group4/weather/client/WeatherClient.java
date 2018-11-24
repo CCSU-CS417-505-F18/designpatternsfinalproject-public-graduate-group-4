@@ -30,8 +30,11 @@ import edu.cs505.finalproject.group4.patterns.template.weatherprinter.*;
  * left time of the Visitor. 
  * 
  * @author Sudha Bopini, Aditi Sharma, Neelima Ganti, Surabhi Agnihotri
- * @throws JSONException indicate a problem with JASON API, attempt to parse	
+ * @throws ParseException indicate a problem with the API, attempt to parse	
  * malformed documents, problem while creating or parsing the JASON data.
+ * @throws InvalidWeatherProviderException indicates a problem when the 
+ * application is trying to fetch the weather data from invalid API.
+ *
  * @version 1.0
  */
 
@@ -89,7 +92,7 @@ public class WeatherClient {
 	 * 
 	 * @param ws object of the WeatherData 
 	 * @return wd returns the weather data 
-         * @throws JSONException indicate a problem with JASON API, attempt to parse	
+         * @throws ParseException indicate a problem with the API, attempt to parse	
          * malformed documents, problem while creating or parsing the JASON data.
          * @throws IOException whenever an input or output is failed.
 	 */

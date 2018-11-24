@@ -23,7 +23,7 @@ import edu.cs505.finalproject.group4.patterns.singleton.httpconnectionsingleton.
  * code points for the returned string
  * APPID is the unique key, user should give for fetching the data from the API
  *
- * @version 1.0
+ * @version 2.0
  */
 
 public class OpenWebMapsWeatherService implements WeatherService
@@ -35,6 +35,9 @@ public class OpenWebMapsWeatherService implements WeatherService
      *
      * @param inputs valid city name to fetch the data from OpenWeatherMap API.
      * @return weatherResponse weather data for a particular city is returned as String.
+     * @throws IOException whenever an input or output is failed.
+     * @throws ParseException indicate a problem with the API, attempt to parse	
+     * malformed documents, problem while creating or parsing the JASON data.
      */
 
 	@Override

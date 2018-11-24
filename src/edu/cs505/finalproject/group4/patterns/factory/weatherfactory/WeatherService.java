@@ -8,8 +8,9 @@ import java.text.ParseException;
  * WeatherService is an interface class which is extended by the concrete product
  * class. It will allow user to get the Weather data.
  *
- * @version 1.0
+ * @version 2.0
  */
+
 public interface WeatherService
 {
 	/**
@@ -19,7 +20,11 @@ public interface WeatherService
 	 * ENCODING, PARAM_MODE, MODE, PARAMAPPID, APPID.
 	 *
 	 * @param inputs valid city name to fetch the data from OpenWeatherMap API.
+         * @throws IOException whenever an input or output is failed.
+         * @throws ParseException indicate a problem with the API, attempt to parse	
+         * malformed documents, problem while creating or parsing the JASON data.
 	 */
+
 	public String getWeatherData(String inputs) throws IOException, ParseException;
 
 }
