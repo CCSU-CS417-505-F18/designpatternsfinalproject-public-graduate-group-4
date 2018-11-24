@@ -7,21 +7,21 @@ package edu.cs505.finalproject.group4.patterns.strategy.weatherparsing;
  * and Average Temperature. There is a constructor for the WeatherData which is 
  * initialized to 0.
  * 
- * @version 1.0
+ * @version 2.0
  */
 
 public class WeatherData {
 	
-	private float Humidity;
-	private float MinTemp;
-	private float MaxTemp;
-	private float AvgTemp;
+	private float humidity;
+	private float minTemp;
+	private float maxTemp;
+	private float avgTemp;
 	
 	WeatherData(){
-		Humidity = 0;
-		MinTemp = 0;
-		MaxTemp = 0;
-		AvgTemp = 0;
+		humidity = 0;
+		minTemp = 0;
+		maxTemp = 0;
+		avgTemp = 0;
 	}
 	
 	/**
@@ -31,7 +31,7 @@ public class WeatherData {
 	 */
 	
 	public float getHumidity() {
-		return Humidity;
+		return humidity;
 	}
 	
 	/**
@@ -39,7 +39,7 @@ public class WeatherData {
 	 */
 	
 	public void setHumidity(float humidity) {
-		Humidity = humidity;
+		this.humidity = humidity;
 	}
 	
 	/**
@@ -48,7 +48,7 @@ public class WeatherData {
 	 */
 	
 	public float getMinTemp() {
-		return MinTemp;
+		return minTemp;
 	}
 	
 	/**
@@ -56,7 +56,7 @@ public class WeatherData {
 	 */
 	
 	public void setMinTemp(float minTemp) {
-		MinTemp = minTemp;
+		this.minTemp = minTemp;
 	}
 	
 	/**
@@ -65,7 +65,7 @@ public class WeatherData {
 	 */
 	
 	public float getMaxTemp() {
-		return MaxTemp;
+		return maxTemp;
 	}
 	
 	/**
@@ -73,7 +73,7 @@ public class WeatherData {
 	 */
 	
 	public void setMaxTemp(float maxTemp) {
-		MaxTemp = maxTemp;
+		this.maxTemp = maxTemp;
 	}
 	
 	/**
@@ -82,7 +82,7 @@ public class WeatherData {
 	 */
 	
 	public float getAvgTemp() {
-		return AvgTemp;
+		return avgTemp;
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class WeatherData {
 	 */
 	
 	public void setAvgTemp(float avgTemp) {
-		AvgTemp = avgTemp;
+		this.avgTemp = avgTemp;
 	}
 	
 	/**
@@ -99,10 +99,10 @@ public class WeatherData {
 	
 	public void printWeatherData()
 	{
-		System.out.println("Avg Temperature : " + AvgTemp);
-		System.out.println("Min Temperature : " + MinTemp);
-		System.out.println("Max Temperature : " + MaxTemp);
-		System.out.println("Humidity        : " + Humidity + " %");
+		System.out.println("Avg Temperature : " + avgTemp);
+		System.out.println("Min Temperature : " + minTemp);
+		System.out.println("Max Temperature : " + maxTemp);
+		System.out.println("Humidity        : " + humidity + " %");
 		
 	}
 	
