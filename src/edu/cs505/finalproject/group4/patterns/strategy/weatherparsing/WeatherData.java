@@ -7,21 +7,23 @@ package edu.cs505.finalproject.group4.patterns.strategy.weatherparsing;
  * and Average Temperature. There is a constructor for the WeatherData which is 
  * initialized to 0.
  * 
- * @version 1.0
+ * @version 2.0
  */
 
-public class WeatherData {
+public class WeatherData 
+{
 	
-	private float Humidity;
-	private float MinTemp;
-	private float MaxTemp;
-	private float AvgTemp;
+	private float humidity;
+	private float minTemp;
+	private float maxTemp;
+	private float avgTemp;
 	
-	WeatherData(){
-		Humidity = 0;
-		MinTemp = 0;
-		MaxTemp = 0;
-		AvgTemp = 0;
+	public WeatherData()
+	{
+		humidity = 0;
+		minTemp = 0;
+		maxTemp = 0;
+		avgTemp = 0;
 	}
 	
 	/**
@@ -30,16 +32,20 @@ public class WeatherData {
 	 * @return Humidity the Humidity of weather data.
 	 */
 	
-	public float getHumidity() {
-		return Humidity;
+	public float getHumidity() 
+	{
+		return humidity;
 	}
 	
 	/**
 	 * setHumidity() method sets the humidity value of weather data.
+	 * 
+	 * @param humidity humidity fetched from weather API.
 	 */
 	
-	public void setHumidity(float humidity) {
-		Humidity = humidity;
+	public void setHumidity(float humidity)
+	{
+		this.humidity = humidity;
 	}
 	
 	/**
@@ -47,16 +53,20 @@ public class WeatherData {
 	 * @return MinTemp the Minimum temperature of the weather data.
 	 */
 	
-	public float getMinTemp() {
-		return MinTemp;
+	public float getMinTemp() 
+	{
+		return minTemp;
 	}
 	
 	/**
 	 * setMinTemp() method sets the minimum temperature of the Weather data.
+	 * 
+	 * @param minTemp Minimum Temperature fetched from weather API.
 	 */
 	
-	public void setMinTemp(float minTemp) {
-		MinTemp = minTemp;
+	public void setMinTemp(float minTemp) 
+	{
+		this.minTemp = minTemp;
 	}
 	
 	/**
@@ -64,16 +74,20 @@ public class WeatherData {
 	 * @return MaxTemp the Maximum temperature of the weather data.
 	 */
 	
-	public float getMaxTemp() {
-		return MaxTemp;
+	public float getMaxTemp() 
+	{
+		return maxTemp;
 	}
 	
 	/**
 	 * setMaxTemp() method sets the maximum temperature of the Weather data
+	 * 
+	 * @param maxTemp Maximum Temperature fetched from weather API.
 	 */
 	
-	public void setMaxTemp(float maxTemp) {
-		MaxTemp = maxTemp;
+	public void setMaxTemp(float maxTemp) 
+	{
+		this.maxTemp = maxTemp;
 	}
 	
 	/**
@@ -81,16 +95,20 @@ public class WeatherData {
 	 * @return the Average temperature of the weather data.
 	 */
 	
-	public float getAvgTemp() {
-		return AvgTemp;
+	public float getAvgTemp()
+	{
+		return avgTemp;
 	}
 
 	/**
 	 * setAvgTemp() method sets the average temperature of the Weather data
+	 * 
+	 * @param avgTemp Average Temperature fetched from weather API.
 	 */
 	
-	public void setAvgTemp(float avgTemp) {
-		AvgTemp = avgTemp;
+	public void setAvgTemp(float avgTemp) 
+	{
+		this.avgTemp = avgTemp;
 	}
 	
 	/**
@@ -99,10 +117,10 @@ public class WeatherData {
 	
 	public void printWeatherData()
 	{
-		System.out.println("Avg Temperature : " + AvgTemp);
-		System.out.println("Min Temperature : " + MinTemp);
-		System.out.println("Max Temperature : " + MaxTemp);
-		System.out.println("Humidity        : " + Humidity + " %");
+		System.out.println("Avg Temperature : " + avgTemp);
+		System.out.println("Min Temperature : " + minTemp);
+		System.out.println("Max Temperature : " + maxTemp);
+		System.out.println("Humidity        : " + humidity + " %");
 		
 	}
 	

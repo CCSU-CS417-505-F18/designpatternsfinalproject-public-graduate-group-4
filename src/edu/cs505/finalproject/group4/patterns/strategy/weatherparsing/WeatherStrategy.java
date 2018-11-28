@@ -1,6 +1,7 @@
 package edu.cs505.finalproject.group4.patterns.strategy.weatherparsing;
 
-import org.json.JSONException;
+import java.text.ParseException;
+
 
 /**
  * WeatherStrategy is an interface for Strategy pattern and used for weather data 
@@ -8,17 +9,19 @@ import org.json.JSONException;
  * implementing the parse function and return the result as an instance of 
  * WeatherData class.
  * 
- * @version 1.0
+ * @version 2.0
  */
-public interface WeatherStrategy {
+public interface WeatherStrategy 
+{
 	
 	/**
 	 * The parse() method will parse the weather data which is fetched from the
 	 * weather API in string using JSONObject.
 	 * @param weatherString weather data fetched from weather API in string format
-	 * @throws JSONException indicate a problem with JASON API, attempt to parse	
-	 * malformed documents, problem while creating or parsing the JASON data.
+	 * @throws ParseException indicate a problem with the API, attempt to parse	
+	 * malformed documents, problem while creating or parsing the JSON data.
+	 * @return WeatherData Weather data object
 	 */
 
-	public WeatherData parse(String weatherString) throws JSONException;
+	public WeatherData parse(String weatherString) throws ParseException;
 }
