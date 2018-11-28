@@ -1,6 +1,5 @@
-edu.cs505.finalproject.group4.patterns.decorator.visitordecorator
 edu.cs505.finalproject.group4.patterns.factory.weatherfactory
-edu.cs505.finalproject.group4.patterns.iteration.weatheriterator
+edu.cs505.finalproject.group4.patterns.innerclass.weatheriterator
 edu.cs505.finalproject.group4.patterns.singleton.httpconnectionsingleton
 edu.cs505.finalproject.group4.patterns.strategy.weatherparsing
 edu.cs505.finalproject.group4.patterns.template.weatherprinter
