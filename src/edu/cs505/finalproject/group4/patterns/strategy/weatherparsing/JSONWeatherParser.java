@@ -7,7 +7,7 @@ import org.json.JSONObject;
 
 /**
  * JSONWeatherParser implements WeatherStrategy interface. This is a concrete
- * implementation of WeatherStrategy. OpenWeatherMaps API uses JASONObject. The 
+ * implementation of WeatherStrategy. OpenWeatherMaps API uses JSONObject. The 
  * JSONWeatherParser class gets the weather data from the API in the form of a
  * string and then parses the string using JSONObject. It returns the parsed 
  * result as WeatherData object.
@@ -15,7 +15,8 @@ import org.json.JSONObject;
  * @version 2.0
  */
 
-public class JSONWeatherParser implements WeatherStrategy {
+public class JSONWeatherParser implements WeatherStrategy 
+{
 
 	/**
 	 * The parse () is a concrete parsing function which takes the weather data
@@ -28,13 +29,15 @@ public class JSONWeatherParser implements WeatherStrategy {
 	 * malformed documents, problem while creating or parsing the JASON data.
 	 */
 	
-	public WeatherData parse(String weatherString) throws ParseException{
+	public WeatherData parse(String weatherString) throws ParseException
+	{
 		WeatherData wd = null;
 		double kelvin = 273.15;
 		
 		
 		JSONObject jsonObj;
-		try {
+		try 
+		{
 			wd = new WeatherData();
 			jsonObj = (weatherString != null) ? new JSONObject(weatherString) : null;
 			JSONObject mainJsonObj = new JSONObject((jsonObj != null) ? jsonObj.optString("main", null) : null);
@@ -49,7 +52,8 @@ public class JSONWeatherParser implements WeatherStrategy {
 			wd.setAvgTemp((float) (Float.parseFloat(tempAvg)-kelvin));
 			
 
-		} catch (JSONException e) {
+		} catch (JSONException e) 
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	        

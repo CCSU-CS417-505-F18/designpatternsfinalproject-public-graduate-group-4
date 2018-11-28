@@ -37,7 +37,7 @@ public class OpenWebMapsWeatherService implements WeatherService
      * @return weatherResponse weather data for a particular city is returned as String.
      * @throws IOException whenever an input or output is failed.
      * @throws ParseException indicate a problem with the API, attempt to parse	
-     * malformed documents, problem while creating or parsing the JASON data.
+     * malformed documents, problem while creating or parsing the JSON data.
      */
 
 	@Override

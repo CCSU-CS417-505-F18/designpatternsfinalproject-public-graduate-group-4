@@ -11,14 +11,16 @@ import java.text.ParseException;
  * 
  * @version 2.0
  */
-public interface WeatherStrategy {
+public interface WeatherStrategy 
+{
 	
 	/**
 	 * The parse() method will parse the weather data which is fetched from the
 	 * weather API in string using JSONObject.
 	 * @param weatherString weather data fetched from weather API in string format
 	 * @throws ParseException indicate a problem with the API, attempt to parse	
-	 * malformed documents, problem while creating or parsing the JASON data.
+	 * malformed documents, problem while creating or parsing the JSON data.
+	 * @return WeatherData Weather data object
 	 */
 
 	public WeatherData parse(String weatherString) throws ParseException;

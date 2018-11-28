@@ -5,7 +5,7 @@
  * the response from API after checking the errors/failures. ExceptionHandling is
  * done to handle the errors and bad response if the URL is not available/invalid. 
  * The Weather data is fetched from the Weather Station API and the response is returned
- * as jasonObj which is then parsed to get the TEMP_MIN, TEMP_MAX, HUMIDITY based on the 
+ * as jsonObj which is then parsed to get the TEMP_MIN, TEMP_MAX, HUMIDITY based on the 
  * city name. It also creates an instance of the JSON Weather data parser which calls the parse 
  * method of the parser class and prints the weather data. User has option to select how 
  * they want to display the weather on screen. They can choose among the two printing 

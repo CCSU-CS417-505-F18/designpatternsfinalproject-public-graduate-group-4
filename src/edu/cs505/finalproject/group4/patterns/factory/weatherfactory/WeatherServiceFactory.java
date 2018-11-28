@@ -1,6 +1,5 @@
 package edu.cs505.finalproject.group4.patterns.factory.weatherfactory;
 
-
 /**
  * The WeatherServiceFactory is an abstract Factory interface which defines
  * the Factory method and creates WeatherService object.
@@ -16,7 +15,8 @@ public interface WeatherServiceFactory
 	 * by its subclass and gives an instance of the concrete WeatherService class.
 	 * The implementation is done by the WeatherServiceCreatorFactory class
 	 *
-	 * @param sWeatherServiceType
+	 * @param sWeatherServiceType takes the OpenWeatherMAP API(OWN)
+	 * @return WeatherService object of the WeatherService
 	 * @throws InvalidWeatherProviderException if the user tries to access the 
 	 * weather data from invalid API.
 	 */
