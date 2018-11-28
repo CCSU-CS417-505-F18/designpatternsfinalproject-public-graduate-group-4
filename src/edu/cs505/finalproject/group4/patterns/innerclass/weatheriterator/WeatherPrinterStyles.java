@@ -1,20 +1,19 @@
-package edu.cs505.finalproject.group4.patterns.iteration.weatheriterator;
+package edu.cs505.finalproject.group4.patterns.innerclass.weatheriterator;
 
 import java.util.Iterator;
 
-
 /**
- * The Iterator Design Pattern is implemented as an Enum. The enum stores the list 
- * of all printing styles for Weather Data that are available. The iterator 
- * functionality is implemented as an Inner Static class to isolate the iterator 
- * from being used outside of the WeatherPrinterStyles. The isolation based protection
- * is necessary as the Iterator implementation only works on the enum value of the 
- * WeatherPrinterStyles.
+ * The enum stores the list of all printing styles for Weather Data that are 
+ * available. The iterator functionality is implemented as an Inner Static class 
+ * to isolate the iterator from being used outside of the WeatherPrinterStyles. 
+ * The isolation based protection is necessary as the Iterator implementation 
+ * only works on the enum value of the WeatherPrinterStyles.
  * 
  * @version 2.0
  */
 
-public enum WeatherPrinterStyles {
+public enum WeatherPrinterStyles 
+{
 
 	/**
 	 * 
@@ -28,9 +27,12 @@ public enum WeatherPrinterStyles {
 	 * The getIterator() method is a static method which creates and returns the instance 
 	 * of the Iterator Inner class. This method is static as there cannot be any instance 
 	 * created for the WeatherPrinterStyles enum.
+	 * 
+	 * @return WeatherStyleIterator will give the WeatherPrinterStyles, units or description.
 	 */
 	
-	public static Iterator<WeatherPrinterStyles> getIterator() {
+	public static Iterator<WeatherPrinterStyles> getIterator()
+	{
 		return new WeatherStyleIterator();
 	}
 
@@ -44,7 +46,8 @@ public enum WeatherPrinterStyles {
 	 * value that is being iterated.
 	 */
 	
-	private static class WeatherStyleIterator implements Iterator<WeatherPrinterStyles> {
+	private static class WeatherStyleIterator implements Iterator<WeatherPrinterStyles>
+	{
 		
 		private int currentPos;
 
@@ -58,7 +61,8 @@ public enum WeatherPrinterStyles {
 		 */
 
 		 
-		public boolean hasNext() {
+		public boolean hasNext() 
+		{
 			return currentPos < WeatherPrinterStyles.values().length;
 		}
 
@@ -67,7 +71,8 @@ public enum WeatherPrinterStyles {
 		 * @return current style value from the list of Weather Styles available 
 		 */
 		
-		public WeatherPrinterStyles next() {
+		public WeatherPrinterStyles next() 
+		{
 			return WeatherPrinterStyles.values()[currentPos++];
 		}
 		

@@ -10,7 +10,7 @@ import org.json.JSONException;
 
 
 import edu.cs505.finalproject.group4.patterns.factory.weatherfactory.*;
-import edu.cs505.finalproject.group4.patterns.iteration.weatheriterator.*;
+import edu.cs505.finalproject.group4.patterns.innerclass.weatheriterator.WeatherPrinterStyles;
 import edu.cs505.finalproject.group4.patterns.strategy.weatherparsing.*;
 import edu.cs505.finalproject.group4.patterns.template.weatherprinter.*;
 
@@ -30,19 +30,17 @@ import edu.cs505.finalproject.group4.patterns.template.weatherprinter.*;
  * left time of the Visitor. 
  * 
  * @author Sudha Bopini, Aditi Sharma, Neelima Ganti, Surabhi Agnihotri
- * @throws ParseException indicate a problem with the API, attempt to parse	
- * malformed documents, problem while creating or parsing the JASON data.
- * @throws InvalidWeatherProviderException indicates a problem when the 
- * application is trying to fetch the weather data from invalid API.
- *
+ * 
  * @version 1.0
  */
 
-public class WeatherClient {
+public class WeatherClient 
+{
 
 	public static void main(String args[]) throws ParseException, InvalidWeatherProviderException
 	{
-		try {
+		try 
+		{
 
 			WeatherServiceFactory creatorFactory = new WeatherServiceCreatorFactory();
 			WeatherService openWebMapsService = creatorFactory.getWeatherService("OWM"); 
@@ -51,7 +49,8 @@ public class WeatherClient {
 
 			System.out.println("Please select one of the Weather Print Styles : ");
 			Iterator<WeatherPrinterStyles> iter = WeatherPrinterStyles.getIterator();
-			while(iter.hasNext()) {
+			while(iter.hasNext()) 
+			{
 				System.out.println(iter.next());
 			}
 
@@ -64,7 +63,8 @@ public class WeatherClient {
 			in.close();
 			weatherStyle = WeatherPrinterStyles.valueOf(userChoice);
 
-			switch(weatherStyle){
+			switch(weatherStyle)
+			{
 			case  DescriptionBased:
 				WeatherDataPrinterInterface weatherPrinterDesc = new WeatherPrinterInDescription();
 				weatherPrinterDesc.printWeather(wd);
@@ -75,12 +75,15 @@ public class WeatherClient {
 				break;			
 			}
 
-			} catch (IOException e) {			
+			} catch (IOException e) 
+		{			
 			e.printStackTrace();
-		} catch (ParseException e) {
+		} catch (ParseException e)
+		{
 			e.printStackTrace();
 		}
-		catch(IllegalArgumentException ie){
+		catch(IllegalArgumentException ie)
+		{
 			System.out.println("Invalid Choice of style");
 		}
 
@@ -92,12 +95,13 @@ public class WeatherClient {
 	 * 
 	 * @param ws object of the WeatherData 
 	 * @return wd returns the weather data 
-         * @throws ParseException indicate a problem with the API, attempt to parse	
-         * malformed documents, problem while creating or parsing the JASON data.
-         * @throws IOException whenever an input or output is failed.
+     * @throws ParseException indicate a problem with the API, attempt to parse	
+     * malformed documents, problem while creating or parsing the JSON data
+     * @throws IOException whenever an input or output is failed.
 	 */
 	
-	public static WeatherData get_and_printWeatherMessage(WeatherService ws) throws IOException, ParseException {
+	public static WeatherData get_and_printWeatherMessage(WeatherService ws) throws IOException, ParseException 
+	{
 		String sCityName = "Hartford";		
 		String todayWeather = ws.getWeatherData(sCityName);
 

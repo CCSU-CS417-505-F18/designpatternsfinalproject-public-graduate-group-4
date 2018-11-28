@@ -9,8 +9,10 @@ package edu.cs505.finalproject.group4.patterns.factory.weatherfactory;
  * @version 1.0
  */
 
-public class InvalidWeatherProviderException  extends Exception {
-    public InvalidWeatherProviderException(String message) {
+public class InvalidWeatherProviderException  extends Exception
+{
+    public InvalidWeatherProviderException(String message) 
+    {
         super(message);
     }
 }

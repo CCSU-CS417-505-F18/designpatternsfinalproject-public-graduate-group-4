@@ -41,7 +41,8 @@ public class HTTPConnectionRegistry
 		Properties prop = new Properties();
 		OutputStream output = null;
 
-		try {
+		try 
+		{
 
 			output = new FileOutputStream("config.properties");
 
@@ -56,8 +57,6 @@ public class HTTPConnectionRegistry
 			prop.store(output, null);
 			
 			output.close();
-
-			
 			
 			input = new FileInputStream("appconfig.properties");
 
@@ -65,13 +64,18 @@ public class HTTPConnectionRegistry
 			 */
 			connectionProperties.load(input);
 			System.out.println(connectionProperties);
-		} catch (IOException ex) {
+		} catch (IOException ex) 
+		{
 			ex.printStackTrace();
-		} finally {
-			if (input != null) {
-				try {
+		} finally 
+		{
+			if (input != null) 
+			{
+				try 
+				{
 					input.close();
-				} catch (IOException e) {
+				} catch (IOException e) 
+				{
 					e.printStackTrace();
 				}
 			}
@@ -83,7 +87,8 @@ public class HTTPConnectionRegistry
 	 * the connection properties to form the URL 
 	 */
 
-	public Properties getConnectionProperties(){
+	public Properties getConnectionProperties()
+	{
 		return connectionProperties;
 	}
 
@@ -107,10 +112,9 @@ public class HTTPConnectionRegistry
 	/**
 	 * The httpMakeGETRequest() method will make the API request. 
 	 * 
-	 * @param requestAddress It takes Web URL as input and invokes the API call by 
+	 * @param weatherProviderURL It takes Web URL as input and invokes the API call by 
 	 * using the URL as endpoint
 	 * @return response API response after validation of return for HTTP. Return code 200
-	 * @return null if the connection is failed, we get the Error and Bad Response.
 	 * @throws IOException if error occurs when interrupted by I/O operations.
 	 */
 	

@@ -10,7 +10,8 @@ import edu.cs505.finalproject.group4.patterns.strategy.weatherparsing.WeatherDat
  * @version 1.0
  */
 
-public abstract class WeatherPrinterTemplate implements WeatherDataPrinterInterface{
+public abstract class WeatherPrinterTemplate implements WeatherDataPrinterInterface
+{
 	
 	/**
 	 * printWeather() method is a template method which provides a skeleton 
@@ -20,10 +21,10 @@ public abstract class WeatherPrinterTemplate implements WeatherDataPrinterInterf
 	 * formatedPrintHumidity() and printEnd(). 
 	 * 
 	 * @param wd object of the WeatherData class created in weather_parsing package
-	 * @return void nothing
 	 */
 
-	public final  void printWeather(WeatherData wd) {
+	public final  void printWeather(WeatherData wd)
+	{
 		
 		printStart();
 		

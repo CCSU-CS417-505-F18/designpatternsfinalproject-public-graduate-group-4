@@ -10,14 +10,16 @@ package edu.cs505.finalproject.group4.patterns.strategy.weatherparsing;
  * @version 2.0
  */
 
-public class WeatherData {
+public class WeatherData 
+{
 	
 	private float humidity;
 	private float minTemp;
 	private float maxTemp;
 	private float avgTemp;
 	
-	WeatherData(){
+	public WeatherData()
+	{
 		humidity = 0;
 		minTemp = 0;
 		maxTemp = 0;
@@ -30,15 +32,19 @@ public class WeatherData {
 	 * @return Humidity the Humidity of weather data.
 	 */
 	
-	public float getHumidity() {
+	public float getHumidity() 
+	{
 		return humidity;
 	}
 	
 	/**
 	 * setHumidity() method sets the humidity value of weather data.
+	 * 
+	 * @param humidity humidity fetched from weather API.
 	 */
 	
-	public void setHumidity(float humidity) {
+	public void setHumidity(float humidity)
+	{
 		this.humidity = humidity;
 	}
 	
@@ -47,15 +53,19 @@ public class WeatherData {
 	 * @return MinTemp the Minimum temperature of the weather data.
 	 */
 	
-	public float getMinTemp() {
+	public float getMinTemp() 
+	{
 		return minTemp;
 	}
 	
 	/**
 	 * setMinTemp() method sets the minimum temperature of the Weather data.
+	 * 
+	 * @param minTemp Minimum Temperature fetched from weather API.
 	 */
 	
-	public void setMinTemp(float minTemp) {
+	public void setMinTemp(float minTemp) 
+	{
 		this.minTemp = minTemp;
 	}
 	
@@ -64,15 +74,19 @@ public class WeatherData {
 	 * @return MaxTemp the Maximum temperature of the weather data.
 	 */
 	
-	public float getMaxTemp() {
+	public float getMaxTemp() 
+	{
 		return maxTemp;
 	}
 	
 	/**
 	 * setMaxTemp() method sets the maximum temperature of the Weather data
+	 * 
+	 * @param maxTemp Maximum Temperature fetched from weather API.
 	 */
 	
-	public void setMaxTemp(float maxTemp) {
+	public void setMaxTemp(float maxTemp) 
+	{
 		this.maxTemp = maxTemp;
 	}
 	
@@ -81,15 +95,19 @@ public class WeatherData {
 	 * @return the Average temperature of the weather data.
 	 */
 	
-	public float getAvgTemp() {
+	public float getAvgTemp()
+	{
 		return avgTemp;
 	}
 
 	/**
 	 * setAvgTemp() method sets the average temperature of the Weather data
+	 * 
+	 * @param avgTemp Average Temperature fetched from weather API.
 	 */
 	
-	public void setAvgTemp(float avgTemp) {
+	public void setAvgTemp(float avgTemp) 
+	{
 		this.avgTemp = avgTemp;
 	}
 	

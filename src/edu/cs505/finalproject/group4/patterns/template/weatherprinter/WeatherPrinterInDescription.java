@@ -11,7 +11,8 @@ import edu.cs505.finalproject.group4.patterns.strategy.weatherparsing.WeatherDat
  * @version 1.0
  */
 
-public class WeatherPrinterInDescription extends WeatherPrinterTemplate{
+public class WeatherPrinterInDescription extends WeatherPrinterTemplate
+{
 	
 	/**
 	 * printStart() method is an abstract method which displays the startMessage 
@@ -20,7 +21,8 @@ public class WeatherPrinterInDescription extends WeatherPrinterTemplate{
 	 * @return string startMessage for the Weather data.
 	 */
 	
-	protected String printStart() {
+	protected String printStart() 
+	{
 		String sStartMessage = "Describing todays Weather for our city";
 		System.out.println(sStartMessage); 
 		return sStartMessage;
@@ -35,19 +37,26 @@ public class WeatherPrinterInDescription extends WeatherPrinterTemplate{
 	 * @return string TemperatureMessage for the Weather data.
 	 */
 	
-	protected String formatedPrintTemperature(WeatherData wd) {
+	protected String formatedPrintTemperature(WeatherData wd) 
+	{
 		String sTemperatureMessage = "";
-		if(wd.getAvgTemp() <= 5){
+		if(wd.getAvgTemp() <= 5)
+		{
 			sTemperatureMessage = "Today's Weather is very Cold";
-		} else if(wd.getAvgTemp() > 5 && wd.getAvgTemp() <= 15 ){
+		} else if(wd.getAvgTemp() > 5 && wd.getAvgTemp() <= 15 )
+		{
 			sTemperatureMessage = "Today's Weather is Cold";
-		} else if(wd.getAvgTemp() > 15 && wd.getAvgTemp() <= 25 ){
+		} else if(wd.getAvgTemp() > 15 && wd.getAvgTemp() <= 25 )
+		{
 			sTemperatureMessage = "Today's Weather is Sunny";
-		} else if(wd.getAvgTemp() > 25 && wd.getAvgTemp() <= 35 ){
+		} else if(wd.getAvgTemp() > 25 && wd.getAvgTemp() <= 35 )
+		{
 			sTemperatureMessage = "Today's Weather is Hotter";
-		} else if(wd.getAvgTemp() > 35 && wd.getAvgTemp() <= 40 ) {
+		} else if(wd.getAvgTemp() > 35 && wd.getAvgTemp() <= 40 ) 
+		{
 			sTemperatureMessage = "Today's Weather is very Hot";
-		} else {
+		} else 
+		{
 			sTemperatureMessage = "Today's Weather is Extreme";
 		}
 				
@@ -63,15 +72,20 @@ public class WeatherPrinterInDescription extends WeatherPrinterTemplate{
 	 * @return string HumidityMessage for the Weather data.
 	 */
 	
-	protected String formatedPrintHumidity(WeatherData wd) {
+	protected String formatedPrintHumidity(WeatherData wd)
+	{
 		String sHumidityMessage = "Humidity condition is ";
-		if(wd.getHumidity() <= 60.0){
+		if(wd.getHumidity() <= 60.0)
+		{
 			sHumidityMessage += "Low";
-		} else if(wd.getHumidity() > 60.0 && wd.getHumidity() <= 80.0) {
+		} else if(wd.getHumidity() > 60.0 && wd.getHumidity() <= 80.0) 
+		{
 			sHumidityMessage += "Normal";
-		} else if(wd.getHumidity() > 80.0 && wd.getHumidity() <= 90.0) {
+		} else if(wd.getHumidity() > 80.0 && wd.getHumidity() <= 90.0) 
+		{
 			sHumidityMessage += "Highly Humid";
-		} else {
+		} else 
+		{
 			sHumidityMessage += "Extremely Humid";
 		}
 				
@@ -86,7 +100,8 @@ public class WeatherPrinterInDescription extends WeatherPrinterTemplate{
 	 * @return null nothing.
 	 */
 	
-	protected String printEnd() {
+	protected String printEnd() 
+	{
 		System.out.println("End of Weather Weather Details for today!\n\n");
 		return null;
 	}

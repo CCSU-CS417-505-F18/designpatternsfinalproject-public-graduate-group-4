@@ -9,15 +9,15 @@ import edu.cs505.finalproject.group4.patterns.strategy.weatherparsing.WeatherDat
  * @version 1.0
  */
 
-public interface WeatherDataPrinterInterface {
+public interface WeatherDataPrinterInterface 
+{
 	
 	/**
 	 * The printWeather() method takes an argument as object of the WeatherData
 	 * class and will do the printing of the weather information fetched from API.
 	 * @param wd object of the WeatherData class created in weather_parsing package
-	 * @return void nothing
 	 */
 
-	void printWeather(WeatherData wd);
+	public void printWeather(WeatherData wd);
 	
 }

@@ -17,11 +17,11 @@ public class WeatherServiceCreatorFactory implements WeatherServiceFactory
 	 * The method getWeatherService() creates an instance of the concrete
 	 * WeatherService class based on the parameter.
 	 *
-	 * @param sWeatherServiceType
-	 * @return WeatherServiceType the Weather Service Handler concrete Class
-	 * @return null nothing if the Weather Service type is not equal to OWN.
+	 * @param sWeatherServiceType takes the OpenWeatherMAP API(OWN)
+	 * @return WeatherServiceType the Weather Service Handler concrete Class 
+	 * and null if WeatherServiceType is not equal to "OWM"
 	 * @throws InvalidWeatherProviderException if the user tries to access the
-         * data from invalid weather API.
+	 * data from invalid weather API.
 	 */
 
 	@Override

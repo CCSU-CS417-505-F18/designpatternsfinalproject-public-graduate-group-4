@@ -11,7 +11,8 @@ import edu.cs505.finalproject.group4.patterns.strategy.weatherparsing.WeatherDat
  * @version 1.0
  */
 
-public class WeatherPrinterInUnits extends WeatherPrinterTemplate{
+public class WeatherPrinterInUnits extends WeatherPrinterTemplate
+{
 
 	/**
 	 * printStart() method is an abstract method which displays the startMessage 
@@ -20,7 +21,8 @@ public class WeatherPrinterInUnits extends WeatherPrinterTemplate{
 	 * @return string startMessage for the Weather data.
 	 */
 	
-	protected String printStart() {
+	protected String printStart() 
+	{
 		String sStartMessage = "Printing todays Weather for our city";
 		System.out.println(sStartMessage); 
 		return sStartMessage;
@@ -35,7 +37,8 @@ public class WeatherPrinterInUnits extends WeatherPrinterTemplate{
 	 * @return string TemperatureMessage for the Weather data.
 	 */
 	
-	protected String formatedPrintTemperature(WeatherData wd) {
+	protected String formatedPrintTemperature(WeatherData wd) 
+	{
 		String sTemperatureMessage = "Average Temperature    : "+ wd.getAvgTemp()+ " degrees Celcius\n"+
 									"Minimum Temperature    : "+ wd.getMinTemp()+ " degrees Celcius\n"+
 									"Maximum Temperature    : "+ wd.getMaxTemp()+ " degrees Celcius";
@@ -51,7 +54,8 @@ public class WeatherPrinterInUnits extends WeatherPrinterTemplate{
 	 * @return string HumidityMessage for the Weather data.
 	 */
 	
-	protected String formatedPrintHumidity(WeatherData wd) {
+	protected String formatedPrintHumidity(WeatherData wd) 
+	{
 		String sHumidityMessage = "Humidity in Percentage : " + wd.getHumidity() + " %";
 		System.out.println(sHumidityMessage);
 		return sHumidityMessage;
@@ -64,7 +68,8 @@ public class WeatherPrinterInUnits extends WeatherPrinterTemplate{
 	 * @return null nothing.
 	 */
 	
-	protected String printEnd() {
+	protected String printEnd() 
+	{
 		System.out.println("End of Weather Weather Details!\n\n");
 		return null;
 	}
