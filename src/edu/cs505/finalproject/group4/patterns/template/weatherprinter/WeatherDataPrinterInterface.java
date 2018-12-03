@@ -18,6 +18,5 @@ public interface WeatherDataPrinterInterface
 	 * @param wd object of the WeatherData class created in weather_parsing package
 	 */
 
-	public void printWeather(WeatherData wd);
-	
+	public String printWeather(WeatherData wd);	
 }

@@ -102,8 +102,9 @@ public class WeatherPrinterInDescription extends WeatherPrinterTemplate
 	
 	protected String printEnd() 
 	{
-		System.out.println("End of Weather Weather Details for today!\n\n");
-		return null;
+		String endMsg = "End of Weather Weather Details for today!\n\n";
+		System.out.println(endMsg);
+		return endMsg;
 	}
 
 }
