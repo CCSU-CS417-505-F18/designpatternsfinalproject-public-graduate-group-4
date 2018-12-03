@@ -1,6 +1,2 @@
-edu.cs505.finalproject.group4.patterns.factory.weatherfactory
-edu.cs505.finalproject.group4.patterns.innerclass.weatheriterator
-edu.cs505.finalproject.group4.patterns.singleton.httpconnectionsingleton
-edu.cs505.finalproject.group4.patterns.strategy.weatherparsing
-edu.cs505.finalproject.group4.patterns.template.weatherprinter
-edu.cs505.finalproject.group4.weather.client
+edu.cs505.finalproject.group4
+edu.cs505.smarthome.group4
