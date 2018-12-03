@@ -23,16 +23,16 @@ public abstract class WeatherPrinterTemplate implements WeatherDataPrinterInterf
 	 * @param wd object of the WeatherData class created in weather_parsing package
 	 */
 
-	public final  void printWeather(WeatherData wd)
-	{
+	public final  String printWeather(WeatherData wd) {
+		String weatherData = "";
+		weatherData = printStart();
 		
-		printStart();
+		weatherData += formatedPrintTemperature(wd);
 		
-		formatedPrintTemperature(wd);
+		weatherData += formatedPrintHumidity(wd);
 		
-		formatedPrintHumidity(wd);
-		
-		printEnd();		
+		weatherData += printEnd();		
+		return weatherData;
 	}
 	
 	/**
