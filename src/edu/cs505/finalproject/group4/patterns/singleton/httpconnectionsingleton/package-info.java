@@ -1,4 +1,4 @@
-/**
+/** 
  * This package contains the implementation of Singleton pattern
  * with static member as instance which contains the instance of the
  * Singleton class, private constructor HTTPConnectionRegistry which 

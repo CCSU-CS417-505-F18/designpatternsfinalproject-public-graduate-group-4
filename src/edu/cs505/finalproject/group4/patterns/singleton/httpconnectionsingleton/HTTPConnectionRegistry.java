@@ -16,6 +16,9 @@ import java.util.zip.Inflater;
 import java.util.zip.InflaterInputStream;
 
 /**
+ * This code (httpMakeGETRequest method) was taken from 
+ * https://github.com/hxiong/MyWeatherMap,based on our requirement,
+ * 50% of it was developed by us. 
  * The HTTPConnectionRegistry class is a Singleton Class which allows to 
  * create one instance of the class. Using Singleton class, invocation
  * is done. This class will have the httpMakeGETRequest method to
